@@ -1,0 +1,67 @@
+# ─── Python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ─── Virtual Environment ──────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ─── IDE / Editor ─────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# ─── OS ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+
+# ─── Environment / Secrets ────────────────────────────────────────────────
+.env
+.env.local
+*.pem
+*.key
+
+# ─── Model Artifacts (large binaries) ─────────────────────────────────────
+models/**/*.keras
+models/**/*.h5
+models/**/*.pkl
+models/**/*.joblib
+models/**/*.onnx
+
+# ─── Data (large datasets — regenerate via preprocessing) ─────────────────
+data/raw/*.csv
+data/processed/*.csv
+
+# ─── Generated Reports (regenerate via src modules) ───────────────────────
+reports/figures/*.html
+reports/results/*.json
+reports/results/*.md
+reports/eda_summary_report.md
+
+# ─── Logs ─────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Jupyter ──────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ─── Testing ──────────────────────────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
