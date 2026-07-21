@@ -9,7 +9,6 @@ All figures are saved as interactive HTML files into reports/figures/.
 
 import logging
 from pathlib import Path
-from typing import Optional
 
 import numpy as np
 import pandas as pd
@@ -29,7 +28,6 @@ _REPORTS_DIR = _ROOT / "reports"
 
 # Plotly defaults for consistent styling
 _PLOTLY_TEMPLATE = "plotly_white"
-_COLOR_SEQUENCE = px.colors.qualitative.Set2
 
 
 # ---------------------------------------------------------------------------

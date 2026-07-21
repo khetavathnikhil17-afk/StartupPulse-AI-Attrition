@@ -47,7 +47,7 @@ def render() -> None:
     c1, c2, c3, c4, c5 = st.columns(5)
     with c1: kpi_card("👥", f"{total:,}", "Total Employees", delay=0)
     with c2: kpi_card("🚪", f"{leavers:,}", "Left Company", delay=60)
-    with c3: kpi_card("🎯", f"{leavers/total*100:.1f}%", "Attrition Rate", delay=120)
+    with c3: kpi_card("🎯", f"{leavers/total*100:.1f}%" if total > 0 else "0%", "Attrition Rate", delay=120)
     with c4: kpi_card("💰", f"${df['MonthlyIncome'].median():,.0f}", "Median Income", delay=180)
     with c5: kpi_card("📊", f"{df['Age'].mean():.0f}", "Avg Age", delay=240)
 

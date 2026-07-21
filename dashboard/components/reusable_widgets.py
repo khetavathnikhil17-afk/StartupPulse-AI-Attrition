@@ -14,7 +14,7 @@ Provides:
 
 import json
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 
 import streamlit as st
 
@@ -901,23 +901,23 @@ def default_plotly_layout() -> Dict[str, Any]:
 @st.cache_data
 def load_metrics() -> Dict[str, float]:
     """Load evaluation metrics from the results JSON."""
-    import logging as _log
-    _logger = _log.getLogger(__name__)
+    import logging
+    logger = logging.getLogger(__name__)
     path = _ROOT / "reports" / "results" / "metrics.json"
     if not path.exists():
-        _logger.warning("metrics.json not found at %s", path)
+        logger.warning("metrics.json not found at %s", path)
         return {}
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
 @st.cache_data
 def load_training_history_html(name: str) -> str:
     """Load an HTML figure file and return its contents."""
-    import logging as _log
-    _logger = _log.getLogger(__name__)
+    import logging
+    logger = logging.getLogger(__name__)
     path = _ROOT / "reports" / "figures" / name
     if not path.exists():
-        _logger.warning("Figure not found: %s", name)
+        logger.warning("Figure not found: %s", name)
         return "<p style='color:#64748B;'>Figure not found.</p>"
     return path.read_text(encoding="utf-8")

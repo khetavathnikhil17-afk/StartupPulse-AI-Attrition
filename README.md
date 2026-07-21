@@ -145,7 +145,11 @@ StartupPulse-AI-Attrition/
 ├── 📄 README.md
 ├── 📄 requirements.txt
 ├── 📄 .gitignore
-├── 📄 eda_summary_report.md
+├── 📄 LICENSE
+├── 📄 CHANGELOG.md
+├── 📄 CONTRIBUTING.md
+├── 📄 CODE_OF_CONDUCT.md
+├── 📄 SECURITY.md
 │
 ├── 📁 data/
 │   ├── 📁 raw/                          # Original IBM HR dataset
@@ -156,45 +160,50 @@ StartupPulse-AI-Attrition/
 │       └── test.csv                     # 221 samples (15%)
 │
 ├── 📁 models/
+│   ├── 📄 README.md                     # How to generate model files
 │   └── 📁 startuppulse_v1/
-│       ├── attrition_model.keras        # Trained DNN model (688 KB)
+│       ├── attrition_model.keras        # Trained DNN model
 │       ├── scaler.pkl                   # Fitted StandardScaler
 │       └── label_encoders.pkl           # Fitted LabelEncoders
 │
 ├── 📁 src/                              # Source code modules
 │   ├── 📁 data/
-│   │   ├── check_dataset.py             # Dataset exploration (14 functions)
-│   │   └── preprocessing.py             # Full pipeline (10 functions)
+│   │   ├── check_dataset.py             # Dataset exploration
+│   │   └── preprocessing.py             # Full preprocessing pipeline
 │   ├── 📁 model/
 │   │   ├── train.py                     # DNN build + train + callbacks
 │   │   ├── evaluate.py                  # Metrics + confusion matrix + report
 │   │   └── predict.py                   # Prediction + preprocessing
 │   ├── 📁 visualization/
-│   │   └── eda.py                       # 12 Plotly EDA visualizations
-│   └── 📁 explainability/
-│       └── shap_explainer.py            # 5 SHAP plot types
+│   │   └── eda.py                       # 13 Plotly EDA visualizations
+│   ├── 📁 explainability/
+│   │   └── shap_explainer.py            # 5 SHAP plot types
+│   └── 📁 utils/
+│       ├── config.py                    # Centralized constants
+│       └── logger.py                    # Logging configuration
 │
 ├── 📁 dashboard/
 │   ├── app.py                           # Main Streamlit entry point
 │   ├── 📁 components/
-│   │   └── reusable_widgets.py          # Premium CSS (17KB, 14 animations)
-│   └── 📁 pages/
+│   │   └── reusable_widgets.py          # Premium CSS + shared widgets
+│   ├── 📁 assets/
+│   │   └── __init__.py
+│   └── 📁 _pages/
 │       ├── home.py                      # Hero + KPIs + workflow
 │       ├── predict.py                   # 30-field prediction form
 │       ├── analytics.py                 # 9 interactive charts
 │       ├── explainability.py            # 5 SHAP visualizations
 │       ├── reports.py                   # Metrics + training curves
-│       └── about.py                     # Tech stack + team info
+│       └── about.py                     # Tech stack + project info
 │
 ├── 📁 reports/
 │   ├── 📁 figures/                      # All generated plots (HTML)
-│   │   ├── 1_distribution_*.html        # EDA plots
-│   │   ├── confusion_matrix.html        # Confusion matrix
-│   │   ├── training_curves.html         # Loss/Accuracy curves
-│   │   └── shap_*.html                  # SHAP explanation plots
 │   └── 📁 results/
 │       ├── evaluation_report.md         # Full evaluation report
 │       └── metrics.json                 # Test set metrics
+│
+└── 📁 .streamlit/
+    └── config.toml                      # Dark theme configuration
 ```
 
 ---
@@ -319,7 +328,7 @@ Actual  No  [143     42]
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/StartupPulse-AI-Attrition.git
+git clone https://github.com/NikhilKhetavath/StartupPulse-AI-Attrition.git
 cd StartupPulse-AI-Attrition
 
 # 2. Create a virtual environment
@@ -446,7 +455,7 @@ python -m src.model.predict --employee '{"Age":35,"MonthlyIncome":5000,...}'
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) first.
 
 ```bash
 # 1. Fork the repository
@@ -503,6 +512,6 @@ Built with ❤️ by **StartupPulse AI Team**
 
 ---
 
-![Visitors](https://api.visitorbadge.io/api/visitors?path=yourusername%2FStartupPulse-AI-Attrition&countColor=%232563EB&style=for-the-badge)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=NikhilKhetavath%2FStartupPulse-AI-Attrition&countColor=%232563EB&style=for-the-badge)
 
 </div>

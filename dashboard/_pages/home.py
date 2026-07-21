@@ -1,9 +1,11 @@
-"""Home Page – StartupPulse AI Dashboard (Premium Enterprise)."""
+"""Home Page -- StartupPulse AI Dashboard."""
 
 import json
 import logging
 from pathlib import Path
+from typing import List, Tuple
 
+import pandas as pd
 import streamlit as st
 from dashboard.components.reusable_widgets import (
     kpi_card, nav_card, section_header, section_sub,
@@ -13,7 +15,7 @@ logger = logging.getLogger(__name__)
 _ROOT = Path(__file__).resolve().parents[2]
 
 
-def _load_kpis() -> list:
+def _load_kpis() -> List[Tuple[str, str, str]]:
     """Load KPI values from metrics.json and dataset, with fallback defaults."""
     defaults = [
         ("📊", "—", "Total Employees"),
@@ -39,7 +41,6 @@ def _load_kpis() -> list:
         total = "—"
         departments = "—"
         if raw_path.exists():
-            import pandas as pd
             df = pd.read_csv(raw_path)
             total = f"{len(df):,}"
             departments = str(df["Department"].nunique())

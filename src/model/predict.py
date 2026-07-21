@@ -10,7 +10,7 @@ import logging
 import pickle
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional
 
 import numpy as np
 import pandas as pd
@@ -44,9 +44,6 @@ _CATEGORICAL_COLS: List[str] = [
 
 # Numeric columns (all remaining after categoricals)
 _NUMERIC_COLS: List[str] = [c for c in _FEATURE_ORDER if c not in _CATEGORICAL_COLS]
-
-# Columns dropped during training (constant / identifier)
-_DROPPED_COLS: List[str] = ["EmployeeCount", "EmployeeNumber", "Over18", "StandardHours"]
 
 
 # ---------------------------------------------------------------------------
@@ -404,7 +401,6 @@ if __name__ == "__main__":
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    # --- Demo: predict for a sample employee ---
     sample_employee = {
         "Age": 41,
         "BusinessTravel": "Travel_Rarely",
@@ -440,9 +436,9 @@ if __name__ == "__main__":
 
     result = predict_attrition(sample_employee)
 
-    print("\n" + "=" * 60)
-    print("PREDICTION RESULT")
-    print("=" * 60)
+    logger.info("=" * 60)
+    logger.info("PREDICTION RESULT")
+    logger.info("=" * 60)
     for key, value in result.to_dict().items():
-        print(f"  {key:<25s}: {value}")
-    print("=" * 60)
+        logger.info("  %-25s: %s", key, value)
+    logger.info("=" * 60)

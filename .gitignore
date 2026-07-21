@@ -1,4 +1,8 @@
-# ─── Python ────────────────────────────────────────────────────────────────
+# ══════════════════════════════════════════════════════════════════════════════
+# StartupPulse AI — .gitignore
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ─── Python ──────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
@@ -8,13 +12,13 @@ dist/
 build/
 *.egg
 
-# ─── Virtual Environment ──────────────────────────────────────────────────
+# ─── Virtual Environment ────────────────────────────────────────────────────
 .venv/
 venv/
 env/
 ENV/
 
-# ─── IDE / Editor ─────────────────────────────────────────────────────────
+# ─── IDE / Editor ───────────────────────────────────────────────────────────
 .idea/
 .vscode/
 *.swp
@@ -22,46 +26,58 @@ ENV/
 *~
 .project
 .settings/
+*.sublime-workspace
+*.sublime-project
 
-# ─── OS ───────────────────────────────────────────────────────────────────
+# ─── OS ─────────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
 Desktop.ini
 *.tmp
 *.bak
 
-# ─── Environment / Secrets ────────────────────────────────────────────────
+# ─── Environment / Secrets ──────────────────────────────────────────────────
 .env
 .env.local
+.env.production
 *.pem
 *.key
 
-# ─── Model Artifacts (large binaries) ─────────────────────────────────────
+# ─── Streamlit ──────────────────────────────────────────────────────────────
+.streamlit/secrets.toml
+
+# ─── Model Artifacts (large — regenerate or download) ───────────────────────
 models/**/*.keras
 models/**/*.h5
 models/**/*.pkl
 models/**/*.joblib
 models/**/*.onnx
+models/**/*.safetensors
 
-# ─── Data (large datasets — regenerate via preprocessing) ─────────────────
+# ─── Data (regenerate via preprocessing) ────────────────────────────────────
 data/raw/*.csv
 data/processed/*.csv
 
-# ─── Generated Reports (regenerate via src modules) ───────────────────────
+# ─── Generated Reports (regenerate via src modules) ─────────────────────────
 reports/figures/*.html
 reports/results/*.json
 reports/results/*.md
 reports/eda_summary_report.md
 
-# ─── Logs ─────────────────────────────────────────────────────────────────
+# ─── Logs ───────────────────────────────────────────────────────────────────
 *.log
 logs/
 
-# ─── Jupyter ──────────────────────────────────────────────────────────────
+# ─── Jupyter ────────────────────────────────────────────────────────────────
 .ipynb_checkpoints/
 
-# ─── Testing ──────────────────────────────────────────────────────────────
+# ─── Testing ────────────────────────────────────────────────────────────────
 .pytest_cache/
 htmlcov/
 .coverage
 coverage.xml
+
+# ─── TensorFlow ─────────────────────────────────────────────────────────────
+*.tflite
+saved_model/
+train_output/
