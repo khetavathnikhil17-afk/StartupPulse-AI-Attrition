@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Class-weight balancing to handle 84:16 attrition imbalance ({0: 0.6, 1: 3.6})
 - EarlyStopping (patience=10) and ReduceLROnPlateau (factor=0.5, patience=5) callbacks
 - Model checkpointing to `models/startuppulse_v1/attrition_model.keras`
-- Achieves 70.6% accuracy, 55.6% recall, 68.1% ROC-AUC on held-out test set
+- Achieves 79.6% accuracy, 36.1% recall, 71.2% ROC-AUC on held-out test set
 
 #### Data Pipeline
 - Automated preprocessing of IBM HR Analytics Employee Attrition Dataset (1,470 samples × 35 features)

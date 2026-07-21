@@ -94,11 +94,11 @@ Generates SHAP plots in `reports/figures/`:
 
 | Metric | Score |
 |---|---|
-| Accuracy | 70.6% |
-| Precision | 35.4% |
-| Recall | 55.6% |
-| F1-Score | 45.5% |
-| ROC-AUC | 68.1% |
+| Accuracy | 79.6% |
+| Precision | 37.1% |
+| Recall | 36.1% |
+| F1-Score | 36.6% |
+| ROC-AUC | 71.2% |
 
 ## File Descriptions
 
