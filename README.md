@@ -14,7 +14,7 @@
 
 ---
 
-**An end-to-end AI/ML pipeline that predicts employee attrition using a deep neural network with 36% recall, 71% ROC-AUC, and a fully interactive, glassmorphism-styled dashboard powered by SHAP explainability.**
+**An end-to-end AI/ML pipeline that predicts employee attrition using a deep neural network with 42% recall, 77% ROC-AUC, and a fully interactive, glassmorphism-styled dashboard powered by SHAP explainability.**
 
 [![Dashboard](https://img.shields.io/badge/Run_Dashboard-FF6B6B?style=for-the-badge)](#-quick-start)
 
@@ -282,21 +282,22 @@ Non-trainable params: 768
 
 | Metric | Score |
 |---|---|
-| **Accuracy** | **79.6%** |
-| **Precision** | 37.1% |
-| **Recall** | **36.1%** |
-| **F1-Score** | 36.6% |
-| **ROC-AUC** | **71.2%** |
+| **Accuracy** | **86.9%** |
+| **Precision** | 65.2% |
+| **Recall** | **41.7%** |
+| **F1-Score** | 50.9% |
+| **ROC-AUC** | **76.9%** |
+| **Optimal Threshold** | 0.888 |
 
-> The model achieves **ROC-AUC (71.2%)** — critical for attrition prediction, as it measures the model's ability to distinguish between attrition and non-attrition cases.
+> The model achieves **ROC-AUC (76.9%)** and **precision (65.2%)** — optimal threshold (0.888) tuned on validation set to maximize F1-score.
 
 ### Confusion Matrix
 
 ```
                 Predicted
               No     Yes
-Actual  No  [163     22]
-        Yes [ 23     13]
+Actual  No  [177      8]
+        Yes [ 21     15]
 ```
 
 ### Top 10 Most Important Features (SHAP)
