@@ -328,7 +328,7 @@ Actual  No  [143     42]
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/NikhilKhetavath/StartupPulse-AI-Attrition.git
+git clone https://github.com/khetavathnikhil17-afk/StartupPulse-AI-Attrition.git
 cd StartupPulse-AI-Attrition
 
 # 2. Create a virtual environment
@@ -512,6 +512,6 @@ Built with ❤️ by **StartupPulse AI Team**
 
 ---
 
-![Visitors](https://api.visitorbadge.io/api/visitors?path=NikhilKhetavath%2FStartupPulse-AI-Attrition&countColor=%232563EB&style=for-the-badge)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=khetavathnikhil17-afk%2FStartupPulse-AI-Attrition&countColor=%232563EB&style=for-the-badge)
 
 </div>
